@@ -51,10 +51,6 @@ public abstract class Building_StorageUnitIOBase : Building_Storage, IForbidPawn
     protected bool ForbidOnPlacement => forbidOnPlacement;
 
 
-    public override Graphic Graphic => IOMode == StorageIOMode.Input ?
-        base.Graphic.GetColoredVersion(base.Graphic.Shader, def.GetModExtension<DefModExtension_StorageUnitIOPortColor>().inColor, Color.white) :
-        base.Graphic.GetColoredVersion(base.Graphic.Shader, def.GetModExtension<DefModExtension_StorageUnitIOPortColor>().outColor, Color.white);
-
     public virtual StorageIOMode IOMode
     {
         get => Mode;
